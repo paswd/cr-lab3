@@ -9,27 +9,28 @@
 
 typedef long double TDouble;
 
-const TDouble INF = std::numeric_limits<TDouble>::max();
+const long long INF = std::numeric_limits<long long>::max();
 
 /*class EllipseCurve {
 private:
-	TDouble A;
-	TDouble B;
+	long long A;
+	long long B;
 
 public:
 	EllipseCurve(void);
-	EllipseCurve(TDouble a, TDouble b);
+	EllipseCurve(long long a, long long b);
 
-	void SetParams(TDouble a, TDouble b);
+	void SetParams(long long a, long long b);
 };*/
 
 class EPoint {
 public:
-	TDouble X;
-	TDouble Y;
+	long long X;
+	long long Y;
 
 	EPoint(void);
-	EPoint(TDouble x, TDouble y);
+	EPoint(long long x, long long y);
+	EPoint(EPoint *sample);
 
 	bool IsInf(void);
 	void SetInf(void);
@@ -43,8 +44,9 @@ const bool operator ==(const EPoint &pnt1, const EPoint &pnt2);
 const bool operator !=(const EPoint &pnt1, const EPoint &pnt2);
 EPoint operator +(const EPoint &pnt1, const EPoint &pnt2);
 EPoint operator -(const EPoint &pnt1, const EPoint &pnt2);
-EPoint operator *(const size_t &num, const EPoint &pnt);
-EPoint operator *(const EPoint &pnt, const size_t &num);
+EPoint operator *(const long long &num, const EPoint &pnt);
+EPoint operator *(const EPoint &pnt, const long long &num);
 EPoint operator /(const EPoint &pnt1, const EPoint &pnt2);
+EPoint operator %(const EPoint &pnt, const long long &p);
 
 #endif //ELLIPSECURVE_HPP
