@@ -4,7 +4,8 @@ using namespace std;
 
 long long	ECURVE_A = 3;
 long long	ECURVE_B = 5;
-long long	ECURVE_P = 9834497;
+long long	ECURVE_P = 2016031;
+//answer = 2015635
 //long long	ECURVE_P = 11;
 
 /*EllipseCurve::EllipseCurve(void) {
